@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantinho dos Sonhos - Colchões e Móveis</title>
+    <!-- Fonts: Plus Jakarta Sans (Headings) + Inter (Body) -->
+    <!-- Combinação premium, totalmente sem serifa (bastão), balanceando seriedade com modernidade. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="/" class="logo" aria-label="Cantinho dos Sonhos Home">
+                <img src="images/logo.png" alt="Cantinho dos Sonhos Colchões e Móveis" width="200" height="auto"
+                    class="logo-img">
+            </a>
+            <nav class="nav">
+                <a href="#contato" class="btn-primary-outline">Fale Conosco</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO: Arquétipo Assimetrico com Bleed Right + Parallax -->
+        <section class="hero-split">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="tag-status">
+                        <span class="pulse"></span> Loja Número 1 em Alvorada
+                    </div>
+
+                    <h1 class="headline">O colchão ideal com<br>entrega acelerada.</h1>
+
+                    <p class="subheadline">Durma melhor hoje mesmo! Descubra grandes marcas com condições a partir de
+                        <strong>10x de R$ 89 sem juros</strong>.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="https://wa.me/5551999999999" class="btn-primary" target="_blank" rel="noopener">
+                            Garantir Melhor Sono
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <div class="store-info">
+                            <span class="icon-map">📍</span>
+                            <span>Av. Pres. Getúlio Vargas, 2324</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual parallax-container">
+                    <!-- Imagem premium com Parallax (speed 0.15) -->
+                    <img src="/.netlify/images?url=https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop&w=1200&q=80"
+                        alt="Cama de casal luxuosa com colchão confortável" class="hero-image parallax-img" width="800"
+                        height="900" loading="eager">
+
+                    <!-- Constraint: Badge Overlap Clean -->
+                    <div class="delivery-card">
+                        <div class="icon-box">🚚</div>
+                        <div class="card-text">
+                            <strong>Receba Hoje Mesmo</strong>
+                            <span>Entrega super rápida!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: Por que escolher o Cantinho dos Sonhos? (BENTO BOX) -->
+        <section class="section-bento" id="beneficios">
+            <div class="container">
+                <div class="bento-grid">
+                    <!-- Célula 1: Título -->
+                    <div class="bento-item item-title" data-aos="fade-up">
+                        <h2 class="bento-heading">A Melhor Loja de<br>Alvorada e Região</h2>
+                        <p class="bento-subtext">Qualidade, agilidade e os preços que você procurava para o seu
+                            descanso.</p>
+                    </div>
+
+                    <!-- Célula 2: Preço -->
+                    <div class="bento-item item-price highlight-red" data-aos="fade-up" data-aos-delay="100">
+                        <div class="bento-icon">🏷️</div>
+                        <h3 class="bento-label">Preço Imbatível</h3>
+                        <p class="bento-value">10x de R$ 99</p>
+                        <p class="bento-desc">Sem juros no cartão, sem taxas ocultas.</p>
+                    </div>
+
+                    <!-- Célula 3: Entrega -->
+                    <div class="bento-item item-delivery glass-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="bento-icon">🚀</div>
+                        <h3 class="bento-label">Entrega Ultra Rápida</h3>
+                        <p class="bento-desc">Dependendo do horário, entregamos no mesmo dia.</p>
+                        <div class="delivery-tag">Express</div>
+                    </div>
+
+                    <!-- Célula 4: Variedade -->
+                    <div class="bento-item item-brands glass-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="bento-icon">⭐</div>
+                        <h3 class="bento-label">Variedade Premium</h3>
+                        <p class="bento-desc">As melhores marcas do mercado reunidas em um só lugar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // AOS-style simplificado + Parallax
+        document.addEventListener('DOMContentLoaded', () => {
+            // Intersection Observer para animações
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('aos-animate');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -100px 0px"
+            });
+
+            document.querySelectorAll('[data-aos]').forEach((el) => {
+                observer.observe(el);
+            });
+
+            // Efeito Parallax Suave no Hero
+            const parallaxImg = document.querySelector('.parallax-img');
+            if (parallaxImg) {
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.scrollY;
+                    const speed = 0.15;
+                    // Move a imagem levemente em sentido oposto ao scroll
+                    parallaxImg.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+            }
+            // Efeito de Outline Title no Scroll
+            const locationTitle = document.getElementById('location-title');
+            if (locationTitle) {
+                window.addEventListener('scroll', () => {
+                    const rect = locationTitle.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 0.7) {
+                        locationTitle.classList.add('solid');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

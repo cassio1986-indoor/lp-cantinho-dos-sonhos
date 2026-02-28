@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantinho dos Sonhos - Colchões</title>
+    <!-- Fonts: Outfit (Família única, geométrica e extremamente moderna) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">CANTINHO DOS SONHOS.</div>
+        <nav class="nav">
+            <a href="#beneficios">Benefícios</a>
+            <a href="#produtos">Festival</a>
+            <a href="#contato" class="btn-nav">Fale Conosco</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO: Split com Overlap & Headline Full Width -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="tag">Entrega Rápida em Alvorada</div>
+                    <h1 class="headline">O COLCHÃO<br>PERFEITO</h1>
+                    <p class="subheadline">Durma melhor hoje mesmo. As melhores marcas com preços imbatíveis a partir de <strong>R$ 899</strong> em até 10x sem juros.</p>
+                    <div class="cta-wrapper">
+                        <a href="#" class="btn-primary">
+                            <span>Quero Dormir Bem Hoje</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="shape-blob"></div>
+                    <div class="image-wrapper">
+                        <!-- Imagem de cama elegante representando o colchão -->
+                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=1000&auto=format&fit=crop" alt="Colchão Premium" class="hero-img" loading="eager">
+                    </div>
+                    <div class="floating-badge">
+                        <span class="badge-icon">⚡</span>
+                        <div>
+                            <strong>Mesmo Dia</strong>
+                            <small>Receba hoje!</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: Bento Box C. -->
+        <section class="benefits" id="beneficios">
+            <div class="container">
+                <div class="section-header">
+                    <h2>A Melhor Loja de <br>Alvorada e Região</h2>
+                    <p>Por que escolher o Cantinho dos Sonhos?</p>
+                </div>
+                
+                <div class="bento-grid">
+                    <div class="bento-card card-large">
+                        <div class="card-icon">🏷️</div>
+                        <h3>Preço Imbatível</h3>
+                        <p>Condições especiais e direto ao ponto. Colchões de mola a partir de 10x de R$ 99 sem juros.</p>
+                    </div>
+                    <div class="bento-card card-light" style="--delay: 0.1s">
+                        <div class="card-icon">🚀</div>
+                        <h3>Entrega Ultra Rápida</h3>
+                        <p>Comprou, chegou! Dependendo do horário, entregamos na sua casa no mesmo dia.</p>
+                    </div>
+                    <div class="bento-card card-dark" style="--delay: 0.2s">
+                        <div class="card-icon">⭐</div>
+                        <h3>Variedade Premium</h3>
+                        <p>Trabalhamos com as melhores marcas do mercado para garantir a qualidade do seu sono.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // AOS-style reveal logic with Intersection Observer to avoid initial opacity:0 on the whole page, ensuring Hero is fully visible initially, only applying to bento cards.
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px"
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.bento-card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantinho dos Sonhos - Colchões Premium</title>
+    <!-- Fonts: DM Serif Display e DM Sans (Editorial, elegante, passa alta credibilidade e sofisticação) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <div class="logo">Cantinho dos Sonhos</div>
+            <nav class="nav">
+                <a href="#beneficios" class="nav-link">Benefícios</a>
+                <a href="#produtos" class="nav-link">Linha de Produtos</a>
+                <a href="#contato" class="btn-outline">Fale Conosco</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO: Arquétipo Editorial Split Assimetrico -->
+        <section class="hero-editorial">
+            <div class="hero-grid container">
+
+                <div class="hero-content">
+                    <div class="trust-badge">
+                        <span class="stars">★★★★★</span>
+                        <span>A melhor loja de Alvorada</span>
+                    </div>
+
+                    <h1 class="headline">O colchão perfeito<br>com entrega no<br>mesmo dia.</h1>
+
+                    <p class="subheadline">Durma melhor hoje mesmo. Descubra as melhores marcas globais com preços
+                        direto ao ponto, a partir de <strong>R$ 899</strong> em até 10x sem juros.</p>
+
+                    <div class="hero-actions">
+                        <a href="#" class="btn-primary">Quero Dormir Bem Hoje</a>
+                    </div>
+
+                    <div class="support-text">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Av. Presidente Getúlio Vargas, 2324 – Alvorada/RS</span>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="image-wrapper">
+                        <!-- Imagem fidedigna de uma cama/colchão premium, não sofá -->
+                        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1200&auto=format&fit=crop"
+                            alt="Colchão de casal luxuoso e confortável na cor branca" class="hero-image"
+                            loading="eager">
+
+                        <div class="delivery-stamp">
+                            <span class="stamp-icon">🚚</span>
+                            <div class="stamp-texts">
+                                <strong>Entrega Ultra Rápida</strong>
+                                <span>Receba o seu hoje</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO BENEFÍCIOS: Arquétipo Minimal / Sparse (Listagem clássica editorial) -->
+        <section class="benefits-editorial" id="beneficios">
+            <div class="container">
+                <div class="benefits-header">
+                    <h2 class="section-title">A escolha certa<br>para o seu sono.</h2>
+                    <p class="section-subtitle">Por que somos a referência em Alvorada e região.</p>
+                </div>
+
+                <div class="benefits-list">
+                    <article class="benefit-item">
+                        <div class="benefit-number">01</div>
+                        <div class="benefit-text">
+                            <h3 class="benefit-title">Preço Imbatível</h3>
+                            <p class="benefit-desc">Condições especiais e direto ao ponto. Colchões de mola com o melhor
+                                custo-benefício financeiro, a partir de 10x de R$ 99 sem juros.</p>
+                        </div>
+                    </article>
+
+                    <article class="benefit-item">
+                        <div class="benefit-number">02</div>
+                        <div class="benefit-text">
+                            <h3 class="benefit-title">Entrega Ultra Rápida</h3>
+                            <p class="benefit-desc">Comprou, chegou! Dependendo do horário do pedido, entregamos o
+                                colchão na sua casa no mesmo dia, sem complicações.</p>
+                        </div>
+                    </article>
+
+                    <article class="benefit-item">
+                        <div class="benefit-number">03</div>
+                        <div class="benefit-text">
+                            <h3 class="benefit-title">Variedade Premium</h3>
+                            <p class="benefit-desc">Trabalhamos exclusivamente com as marcas mais conceituadas do
+                                mercado para assegurar a durabilidade e qualidade do seu descanso.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Animando a lista na rolagem levemente
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.benefit-item').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

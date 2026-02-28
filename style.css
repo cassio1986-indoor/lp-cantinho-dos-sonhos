@@ -1,0 +1,472 @@
+:root {
+    /* Paleta solicitada */
+    --color-primary: #B30000;
+    --color-accent: #FFE600;
+    --color-success: #2ECC4A;
+    --color-bg-light: #E6E6E6;
+    --color-text-muted: #7A7A7A;
+    --color-white: #FFFFFF;
+
+    /* Derivações intermediárias para manter profissionalismo */
+    --color-dark: #222222;
+    --color-border: #EEEEEE;
+
+    /* Typografia Totalmente Bastão / Clean Premium */
+    --font-heading: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* HEADER */
+.header {
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+.logo-img {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+}
+
+.btn-primary-outline {
+    text-decoration: none;
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-outline:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* HERO SECTION - Arquétipo: Assimetrico Bleed Right */
+.hero-split {
+    background-color: var(--color-white);
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 90px);
+}
+
+.hero-content {
+    /* Container Width calculation to maintain alignment */
+    padding-left: max(5%, calc((100vw - 1200px) / 2));
+    padding-right: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.tag-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-bg-light);
+    color: var(--color-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    align-self: flex-start;
+}
+
+.pulse {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-success);
+    box-shadow: 0 0 0 0 rgba(46, 204, 74, 0.7);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(46, 204, 74, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 8px rgba(46, 204, 74, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(46, 204, 74, 0);
+    }
+}
+
+.headline {
+    font-family: var(--font-heading);
+    font-size: clamp(2.8rem, 4vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--color-dark);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.subheadline {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    max-width: 90%;
+}
+
+.subheadline strong {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #990000;
+    transform: translateY(-2px);
+}
+
+.store-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.hero-visual {
+    position: relative;
+    height: 100%;
+    min-height: 500px;
+}
+
+.hero-image {
+    width: 100%;
+    height: 120%;
+    /* Altura maior para permitir o movimento parallax */
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: -10%;
+    /* Início deslocado para cima */
+    left: 0;
+}
+
+.parallax-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.delivery-card {
+    position: absolute;
+    bottom: 3rem;
+    left: -4rem;
+    /* Overlap na esquerda */
+    background-color: var(--color-white);
+    padding: 1.25rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-left: 5px solid var(--color-accent);
+}
+
+.icon-box {
+    background-color: var(--color-bg-light);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-text strong {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--color-dark);
+}
+
+.card-text span {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* BENTO SECTION: Seção 2 moderna */
+.section-bento {
+    padding: 120px 0;
+    background-color: var(--color-bg-light);
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 24px;
+}
+
+.bento-item {
+    background-color: var(--color-white);
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.bento-item[data-aos] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.bento-item.aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bento-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Posicionamento Bento */
+.item-title {
+    grid-column: span 2;
+    background: transparent;
+    padding-left: 0;
+    justify-content: center;
+}
+
+.item-title:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.item-price {
+    grid-row: span 2;
+    justify-content: flex-end;
+}
+
+.highlight-red {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+.highlight-red .bento-label {
+    color: var(--color-accent);
+}
+
+.bento-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.1;
+    color: var(--color-dark);
+    margin-bottom: 20px;
+}
+
+.bento-subtext {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    max-width: 450px;
+}
+
+.bento-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.bento-label {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+}
+
+.bento-value {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.bento-desc {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+}
+
+.highlight-red .bento-desc {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.delivery-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* RESPONSIVIDADE GLOBAL */
+@media (max-width: 1024px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        padding: 4rem 5%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .delivery-card {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 2rem;
+    }
+
+    .modular-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .split-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+
+    .headline br {
+        display: none;
+    }
+
+    .section-bento,
+    .section-festival,
+    .section-location,
+    .section-cta-final {
+        padding: 80px 0;
+    }
+
+    .modular-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .title-outline {
+        font-size: 2.5rem;
+    }
+}
